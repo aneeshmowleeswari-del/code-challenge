@@ -1,0 +1,12 @@
+def group_anagram(words):
+    groups={}
+    for word in words:
+        key= ''.join(sorted(word))
+        if key not in groups:
+            groups[key]=[]
+        groups[key].append(word)
+    return list(groups.values())
+
+words=input("ENTER WORDS SEPARATED BY SPACE:").split()
+result=group_anagram(words)
+print("Grouped Anagrams :",result)
